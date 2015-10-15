@@ -5,9 +5,9 @@ if (Meteor.isClient) {
   Template.body.helpers({
 
 /* dummy data
-db.warmups.insert({ imageURL: "http://www.fillmurray.com/600/400", submitter: "Mister Submitter", submitterURL: "http://www.twitter.com/zachalbert", shareCount: 0, likeCount: 0, createdAt: new Date() });
-db.warmups.insert({ imageURL: "http://www.fillmurray.com/601/401", submitter: "Jolly Face", submitterURL: "http://www.twitter.com/georgebluth", shareCount: 0, likeCount: 0, createdAt: new Date() });
-db.warmups.insert({ imageURL: "http://www.fillmurray.com/602/402", submitter: "Heisenberg", submitterURL: "http://www.twitter.com/elonmusk", shareCount: 0, likeCount: 0, createdAt: new Date() });
+db.warmups.insert({ imageURL: "http://www.fillmurray.com/1600/1400", submitter: "Mister Submitter", submitterURL: "http://www.twitter.com/zachalbert", shareCount: 0, likeCount: 0, createdAt: new Date() });
+db.warmups.insert({ imageURL: "http://www.fillmurray.com/1601/1401", submitter: "Jolly Face", submitterURL: "http://www.twitter.com/georgebluth", shareCount: 0, likeCount: 0, createdAt: new Date() });
+db.warmups.insert({ imageURL: "http://www.fillmurray.com/1602/1402", submitter: "Heisenberg", submitterURL: "http://www.twitter.com/elonmusk", shareCount: 0, likeCount: 0, createdAt: new Date() });
 */
     warmups: function () {
       return Warmups.find({});

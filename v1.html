@@ -1,35 +1,45 @@
 <head>
-  <title>v1</title>
+  <title>Warmup.Design</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-  <header>
-    <a href="#">Logo</a>
-    <a href="#">Profile</a>
-  </header>
+  <div class="navbar navbar-default">
+    <header>
+      <a href="#" class="pull-left">Logo</a>
+      <a href="#" class="pull-right"><i class="fa fa-2x fa-user"></i></a>
+    </header>
+  </div>
   
   {{> warmupNav}}
 
-  {{> dailyWarmup}}
+  <div class="container">
 
-  <button class="submit-today">
-    Submit your warmup for the day
-  </button>
- 
-  {{#each warmups}}
-    {{> warmup}}
-  {{/each}}
+    {{> dailyWarmup}}
+
+    <button class="submit-today">
+      Submit your warmup for the day
+    </button>
+   
+    {{#each warmups}}
+      {{> warmup}}
+    {{/each}}
+
+  </div>
 </body>
 
 <template name="warmupNav">
   <a href="#">Past Warmups</a>
   <a href="#">Today's Warmup</a>
 
-  <div class="day-nav">
-    <a href="#">&lt;</a>
+  <div class="day-nav text-center">
+    <a href="#" class="pull-left"><i class="fa fa-chevron-left"></i></a>
     <span>September 15th, 2015</span><br>
     <span>Warmup submitted by <a href="#">Job Bluth</a></span>
-    <a href="#">&gt;</a>
+    <a href="#" class="pull-right"><i class="fa fa-chevron-right"></i></a>
   </div>
 </template>
 
@@ -38,10 +48,16 @@
 </template>
 
 <template name="warmup">
-  <img src="{{imageURL}}" alt=""><br>
-  <a href="{{submitterURL}}">{{submitter}}</a>
-
-  <a href="#" class="share-warmup">Share ({{shareCount}})</a>
-  <a href="#" class="like-warmup">Like ({{likeCount}})</a>
-  <a href="#" class="kill-warmup">&times;</a>
+  <div class="panel panel-default">
+    <img src="{{imageURL}}" alt="" class="img-responsive">
+    <div class="panel-body">
+      <a href="{{submitterURL}}"><i class="fa fa-user"></i> {{submitter}}</a>
+      
+      <div class="pull-right">
+        <a href="#" class="share-warmup"><i class="fa fa-share"></i> ({{shareCount}})</a>
+        <a href="#" class="like-warmup"><i class="fa fa-heart-o"></i> ({{likeCount}})</a>
+        <a href="#" class="kill-warmup">&times;</a>
+      </div>
+    </div>
+  </div>
 </template>
