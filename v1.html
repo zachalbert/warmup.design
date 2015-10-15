@@ -1,0 +1,47 @@
+<head>
+  <title>v1</title>
+</head>
+
+<body>
+  <header>
+    <a href="#">Logo</a>
+    <a href="#">Profile</a>
+  </header>
+  
+  {{> warmupNav}}
+
+  {{> dailyWarmup}}
+
+  <button class="submit-today">
+    Submit your warmup for the day
+  </button>
+ 
+  {{#each warmups}}
+    {{> warmup}}
+  {{/each}}
+</body>
+
+<template name="warmupNav">
+  <a href="#">Past Warmups</a>
+  <a href="#">Today's Warmup</a>
+
+  <div class="day-nav">
+    <a href="#">&lt;</a>
+    <span>September 15th, 2015</span><br>
+    <span>Warmup submitted by <a href="#">Job Bluth</a></span>
+    <a href="#">&gt;</a>
+  </div>
+</template>
+
+<template name="dailyWarmup">
+  <h1>{{text}}</h1>
+</template>
+
+<template name="warmup">
+  <img src="{{imageURL}}" alt=""><br>
+  <a href="{{submitterURL}}">{{submitter}}</a>
+
+  <a href="#" class="share-warmup">Share ({{shareCount}})</a>
+  <a href="#" class="like-warmup">Like ({{likeCount}})</a>
+  <a href="#" class="kill-warmup">&times;</a>
+</template>
