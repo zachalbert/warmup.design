@@ -1,4 +1,5 @@
 Warmups = new Mongo.Collection("warmups");
+Prompts = new Mongo.Collection("prompts");
 
 if (Meteor.isClient) {
   
@@ -8,9 +9,18 @@ if (Meteor.isClient) {
 db.warmups.insert({ imageURL: "http://www.fillmurray.com/1600/1400", submitter: "Mister Submitter", submitterURL: "http://www.twitter.com/zachalbert", shareCount: 0, likeCount: 0, createdAt: new Date() });
 db.warmups.insert({ imageURL: "http://www.fillmurray.com/1602/1402", submitter: "Jolly Face", submitterURL: "http://www.twitter.com/georgebluth", shareCount: 0, likeCount: 0, createdAt: new Date() });
 db.warmups.insert({ imageURL: "http://www.fillmurray.com/1604/1404", submitter: "Heisenberg", submitterURL: "http://www.twitter.com/elonmusk", shareCount: 0, likeCount: 0, createdAt: new Date() });
+
+db.prompts.insert({ promptDate: new Date(), promptText: 'Draw one million "Q"s', prompter: "Pop Pop", prompterURL: "http://www.asdf.com", createdAt: new Date() });
+db.prompts.insert({ promptDate: new Date(), promptText: 'Draw one million "G"s', prompter: "Huzzah", prompterURL: "http://www.asdf.com", createdAt: new Date() });
 */
     warmups: function () {
       return Warmups.find({}, {sort: {likeCount: -1}});
+    }
+  });
+
+  Template.dailyWarmup.helpers({
+    prompts: function() {
+      return Prompts.find({}, {limit: 1});
     }
   });
 

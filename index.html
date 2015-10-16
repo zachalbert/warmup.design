@@ -14,8 +14,6 @@
     </header>
   </div>
 
-  {{> warmupNav}}
-
   <div class="container">
 
     {{> dailyWarmup}}
@@ -31,20 +29,10 @@
   </div>
 </body>
 
-<template name="warmupNav">
-  <a href="#">Past Warmups</a>
-  <a href="#">Today's Warmup</a>
-
-  <div class="day-nav text-center">
-    <a href="#" class="pull-left"><i class="fa fa-chevron-left"></i></a>
-    <span>September 15th, 2015</span><br>
-    <span>Warmup submitted by <a href="#">Job Bluth</a></span>
-    <a href="#" class="pull-right"><i class="fa fa-chevron-right"></i></a>
-  </div>
-</template>
-
 <template name="dailyWarmup">
-  <h1>{{warmupPrompt}}</h1>
+  {{#each prompts}}
+    {{> prompt}}
+  {{/each}}
 </template>
 
 <template name="submitWarmup">
@@ -69,4 +57,18 @@
       </div>
     </div>
   </div>
+</template>
+
+<template name="prompt">
+  <a href="#">Past Warmups</a>
+  <a href="#">Today's Warmup</a>
+
+  <div class="day-nav text-center">
+    <a href="#" class="pull-left"><i class="fa fa-chevron-left"></i></a>
+    <span>{{promptDate}}</span><br>
+    <span>Warmup submitted by <a href="{{prompterURL}}">{{prompter}}</a> on {{createdAt}}</span>
+    <a href="#" class="pull-right"><i class="fa fa-chevron-right"></i></a>
+  </div>
+
+  <h1 class="text-center">{{promptText}}</h1>
 </template>
