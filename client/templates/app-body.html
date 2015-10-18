@@ -1,0 +1,22 @@
+<body>
+  <div class="navbar navbar-default">
+    <header>
+      <a href="#" class="pull-left">Logo</a>
+      <a href="#" class="pull-right"><i class="fa fa-2x fa-user"></i></a>
+    </header>
+  </div>
+
+  <div class="container">
+
+    {{> dailyWarmup}}
+
+    <div class="warmup-form">
+      {{> submitWarmup}}
+    </div>
+   
+    {{#each warmups}}
+      {{> warmup}}
+    {{/each}}
+
+  </div>
+</body>
