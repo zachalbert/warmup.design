@@ -1,13 +1,15 @@
 <template name="prompt">
-  <a href="#">Past Warmups</a>
-  <a href="#">Today's Warmup</a>
+  <div class="btn-group btn-group-lg" role="group">
+    <a href="#" class="btn btn-secondary">Past Warmups</a>
+    <a href="#" class="btn btn-secondary active">Today's Warmup</a>
+  </div>
 
   <div class="day-nav text-center">
     <a href="#" class="pull-left"><i class="fa fa-chevron-left"></i></a>
-    <span>{{promptDate}}</span><br>
-    <span>Warmup submitted by <a href="{{prompterURL}}">{{prompter}}</a> on {{createdAt}}</span>
     <a href="#" class="pull-right"><i class="fa fa-chevron-right"></i></a>
+    <h2>{{formatDateFull promptDate}}</h2>
+    <span class="text-muted">Warmup submitted by <a href="{{prompterURL}}">{{prompter}}</a> on {{formatDate createdAt}}</span>
   </div>
 
-  <h1 class="text-center">{{promptText}}</h1>
+  <h1 class="display-2 text-center">{{promptText}}</h1>
 </template>
