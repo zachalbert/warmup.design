@@ -1,1 +1,11 @@
-@import "reset.scss";
+/* Setup */
+@import "normalize.scss";
+@import "variables.scss";
+@import "mixins.scss";
+@import "typography.scss";
+
+/* Main stylesheet */
+@import "style.scss";
+
+/* Breakpoint overrides */
+@import "breakpoints.scss";
