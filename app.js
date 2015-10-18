@@ -1,9 +1,6 @@
+// no `var` means it's global
 Warmups = new Mongo.Collection("warmups");
 Prompts = new Mongo.Collection("prompts");
-
-if (Meteor.isClient) {
-  
-  Template.body.helpers({
 
 /* dummy data
 db.warmups.insert({ imageURL: "http://www.fillmurray.com/1600/1400", submitter: "Mister Submitter", submitterURL: "http://www.twitter.com/zachalbert", shareCount: 0, likeCount: 0, createdAt: new Date() });
@@ -13,6 +10,13 @@ db.warmups.insert({ imageURL: "http://www.fillmurray.com/1604/1404", submitter: 
 db.prompts.insert({ promptDate: new Date(), promptText: 'Draw one million "Q"s', prompter: "Pop Pop", prompterURL: "http://www.asdf.com", createdAt: new Date() });
 db.prompts.insert({ promptDate: new Date(), promptText: 'Draw one million "G"s', prompter: "Huzzah", prompterURL: "http://www.asdf.com", createdAt: new Date() });
 */
+
+
+if (Meteor.isClient) {
+  
+  // Helpers are in JSON
+  Template.body.helpers({
+
     warmups: function () {
       return Warmups.find({}, {sort: {likeCount: -1}});
     }
@@ -30,6 +34,9 @@ db.prompts.insert({ promptDate: new Date(), promptText: 'Draw one million "G"s',
       Warmups.update(this._id, {
         $set: {likeCount: this.likeCount + 1}
       });
+      Session.set('lastLike', this.submitter);
+      var lastLiked = Session.get('lastLike');
+      console.log(lastLiked);
     },
     "click .share-warmup": function(e) {
       e.preventDefault();
