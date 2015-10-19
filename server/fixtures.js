@@ -7,14 +7,15 @@ function randomDate(start, end) {
 }
 
 function randomImageParams() {
-  return Math.round((Math.random()*512+512)) + '/' + Math.round((Math.random()*512+512));
+  var randSize = Math.round((Math.random()*520+480))
+  return randSize + '/' + randSize;
 }
 
 Meteor.startup(function () {  
   if (Warmups.find().count() === 0) {
     _(numWarmups).times(function (n) {
       Warmups.insert({
-        imageURL: 'http://www.fillmurray.com/512/512',
+        imageURL: 'http://www.fillmurray.com/' + randomImageParams(),
         submitter: 'Mister Submitter ' + n,
         submitterURL: 'http://www.asdf.com/',
         shareCount: Math.round((Math.random()*25)+1),
