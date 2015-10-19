@@ -6,7 +6,6 @@ A daily design warmup to help designers get better at design.
 
 * Remove autopublish package and get the right things publishing in `server/publications.js`
 * Figure out how to use flow router and flow layout (already included) from (this site)[http://massimilianomarini.com/flowrouter-and-flowlayout-101/].
-* Get fixtures for prompts working.
 
 # Setup
 
