@@ -22,5 +22,13 @@ Meteor.startup(function () {
         createdAt: randomDate(new Date(2015, 0, 1), new Date())
       });
     });
+  } else if (Prompts.find().count() == 0) {
+    Prompts.insert({
+      promptDate: randomDate(new Date(2015, 0, 1), new Date()), 
+      promptText: 'Draw 10 "Q"s',
+      prompter: "Designer Person",
+      prompterURL: "http://www.asdf.com",
+      createdAt: randomDate(new Date(2015, 0, 1), new Date())
+    });
   }
 });
