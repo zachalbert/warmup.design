@@ -20,7 +20,6 @@ autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
 momentjs:moment
 fourseven:scss
-chuikoff:bootstrap-4
 fortawesome:fontawesome
 kadira:flow-router
 arillo:flow-router-helpers

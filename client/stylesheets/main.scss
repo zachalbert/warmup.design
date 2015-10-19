@@ -1,11 +1,11 @@
 /* Setup */
-@import "normalize.scss";
-@import "variables.scss";
-@import "mixins.scss";
-@import "typography.scss";
+@import "bootstrap-flex.scss";
+@import "wd-variables.scss";
+@import "wd-mixins.scss";
+@import "wd-typography.scss";
 
 /* Main stylesheet */
-@import "style.scss";
+@import "wd-style.scss";
 
 /* Breakpoint overrides */
-@import "breakpoints.scss";
+@import "wd-breakpoints.scss";

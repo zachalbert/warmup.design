@@ -1,72 +1,60 @@
-// Return px fallback and rem sizing by passing the css property and pixel value
-@mixin remCalc($property, $pxWidth) {
-  #{$property}: ($pxWidth * 1px);
-  #{$property}: emCalc($pxWidth);
+// Toggles
+//
+// Used in conjunction with global variables to enable certain theme features.
+
+@mixin border-radius($radius: $border-radius) {
+  @if $enable-rounded {
+    border-radius: $radius;
+  }
 }
 
-@function emCalc($pxWidth) {
-  @return $pxWidth / $base * 1em;
+@mixin box-shadow($shadow...) {
+  @if $enable-shadows {
+    box-shadow: $shadow;
+  }
 }
 
-@mixin hyphenate() {
- -ms-word-break: break-all;
-     word-break: break-all;
-     word-break: break-word;
--webkit-hyphens: auto;
-   -moz-hyphens: auto;
-    -ms-hyphens: auto;
-        hyphens: auto;
+@mixin transition($transition...) {
+  @if $enable-transitions {
+    transition: $transition;
+  }
 }
 
-////// Breakpoint measurements //////
-$screen-min-width: emCalc(320);   // 17.777777778; col-xs-#
-$screen-480:       emCalc(480);   // 26.666666667
-$screen-640:       emCalc(640);   // 35.555555556; col-sm-#
-$screen-768:       emCalc(768);   // 42.666666667; col-md-#
-$screen-1024:      emCalc(1024);  // 56.888888889; col-lg-#
-$screen-1200:      emCalc(1200);  // 66.666666667; col-xl-#
+// Utilities
+@import "mixins/breakpoints";
+@import "mixins/hide-text";
+@import "mixins/hover";
+@import "mixins/image";
+@import "mixins/label";
+@import "mixins/reset-filter";
+@import "mixins/resize";
+@import "mixins/responsive-visibility";
+@import "mixins/screen-reader";
+@import "mixins/size";
+@import "mixins/tab-focus";
+@import "mixins/reset-text";
+@import "mixins/text-emphasis";
+@import "mixins/text-truncate";
 
-$screen:    "only screen";
-$min-480:   "only screen and (min-width: #{$screen-480})";
-$min-640:   "only screen and (min-width: #{$screen-640})";
-$min-768:   "only screen and (min-width: #{$screen-768})";
-$min-1024:  "only screen and (min-width: #{$screen-1024})";
-$min-1200:  "only screen and (min-width: #{$screen-1200})";
-$landscape: "only screen and (orientation: landscape)";
-$portrait:  "only screen and (orientation: portrait)";
+// // Components
+@import "mixins/alert";
+@import "mixins/buttons";
+@import "mixins/pagination";
+@import "mixins/list-group";
+@import "mixins/nav-divider";
+@import "mixins/forms";
+@import "mixins/progress";
+@import "mixins/table-row";
 
-// Linear gradients
-@mixin gradient($from, $to) {
-  background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
-  background: -moz-linear-gradient(top,  $from, $to);
-  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
-}
+// // Skins
+@import "mixins/background-variant";
+@import "mixins/border-radius";
+@import "mixins/gradients";
 
-@mixin transition($transition-property, $transition-time, $method) {
-  -webkit-transition: $transition-property $transition-time $method;
-  -moz-transition: $transition-property $transition-time $method;
-  -ms-transition: $transition-property $transition-time $method;
-  -o-transition: $transition-property $transition-time $method;
-  transition: $transition-property $transition-time $method;
-}
-
-@mixin transform($transform) {
-  -webkit-transform: $transform;
-  -moz-transform: $transform;
-  -ms-transform: $transform;
-  -o-transform: $transform;
-  transform: $transform;
-}
-
-// Clearfix
-.group:before,
-.group:after {
-    content: "";
-    display: table;
-} 
-.group:after {
-    clear: both;
-}
-.group {
-    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
-}
+// // Layout
+@import "mixins/clearfix";
+@import "mixins/center-block";
+// @import "mixins/navbar-align";
+@import "mixins/grid-framework";
+@import "mixins/grid";
+@import "mixins/pulls";
