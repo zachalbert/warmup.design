@@ -22,3 +22,5 @@ momentjs:moment
 fourseven:scss
 chuikoff:bootstrap-4
 fortawesome:fontawesome
+kadira:flow-router
+arillo:flow-router-helpers

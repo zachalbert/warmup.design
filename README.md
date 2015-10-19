@@ -6,7 +6,9 @@ A daily design warmup to help designers get better at design.
 
 Everything, more or less.
 
-# To develop
+* Make `server/fixtures.js` work
+* Remove autopublish package and get the right things publishing in `server/publications.js`
+* Figure out how to use flow router and flow layout (already included) from (this site)[http://massimilianomarini.com/flowrouter-and-flowlayout-101/].
 
 * If you don't have meteor installed, run `curl https://install.meteor.com/ | sh`
 * Clone the repo
