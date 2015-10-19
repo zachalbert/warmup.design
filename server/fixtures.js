@@ -14,7 +14,7 @@ Meteor.startup(function () {
   if (Warmups.find().count() === 0) {
     _(numWarmups).times(function (n) {
       Warmups.insert({
-        imageURL: 'http://www.fillmurray.com/' + randomImageParams(),
+        imageURL: 'http://www.fillmurray.com/512/512',
         submitter: 'Mister Submitter ' + n,
         submitterURL: 'http://www.asdf.com/',
         shareCount: Math.round((Math.random()*25)+1),
