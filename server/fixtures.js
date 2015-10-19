@@ -1,13 +1,13 @@
 /* Adds dummy data to db */
 
-var numWarmups = 5;
+var numWarmups = 11;
 
 function randomDate(start, end) {  
     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 }
 
 function randomImageParams() {
-  return Math.round((Math.random()*1500+500)) + '/' + Math.round((Math.random()*1500+500));
+  return Math.round((Math.random()*512+512)) + '/' + Math.round((Math.random()*512+512));
 }
 
 Meteor.startup(function () {  
