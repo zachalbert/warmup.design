@@ -1,4 +1,10 @@
-Template.warmup.events({
+Template.warmupsList.helpers({
+  getWarmups: function() {
+    return Warmups.find({}, { sort: { likeCount: -1 }});
+  }
+});
+
+Template.warmupsList.events({
   "click .like-warmup": function(e) {
     e.preventDefault();
     Warmups.update(this._id, {
@@ -16,6 +22,7 @@ Template.warmup.events({
   },
   "click .kill-warmup": function(e) {
     e.preventDefault();
+    console.log(this._id);
     Warmups.remove(this._id);
   }
 });

@@ -1,0 +1,13 @@
+<template name="promptToday">
+  {{#each getPrompt}}
+    <div class="day-nav text-center">
+      <a href="#" class="pull-left"><i class="fa fa-chevron-left"></i></a>
+      <a href="#" class="pull-right"><i class="fa fa-chevron-right"></i></a>
+      <h2>{{formatDateFull promptDate}}</h2>
+      <span class="text-muted">Warmup submitted by <a href="{{prompterURL}}">{{prompter}}</a> on {{formatDate createdAt}}</span>
+    </div>
+
+    <h1 class="display-2 text-center">{{promptText}}</h1>
+    <a href="#" class="btn btn-secondary kill-prompt text-center">&times; Kill prompt</a>
+  {{/each}}
+</template>

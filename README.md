@@ -13,3 +13,4 @@ A daily design warmup to help designers get better at design.
 * Clone the repo
 * Run `meteor` from the app directory, which will serve the app to http://localhost:3000
 * Run `meter mongo` to do database stuff directly
+* To reset the database and fill it with junk data again, stop the server, run `meteor reset`, then `meteor` again
