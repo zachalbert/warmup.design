@@ -3,6 +3,11 @@ Meteor.publish('warmupsByDate', function(dayOfWarmup) {
   return Warmups.find({ warmupPubDate: dayOfWarmup });
 });
 
+// Given a date, return the id of the warmup that has the highest likeCount
+Meteor.publish('likeWinnerByDate', function(dayOfWarmup) {
+  return Warmups.findOne({ warmupPubDate: dayOfWarmup }, { sort: { likeCount: -1}, fields: { _id: 1}});
+});
+
 // // Return only top warmups for each day
 // Meteor.publish('allTopWarmups', function() {
 //   return Warmups.find({}, {limit: 1, fields: { imageURL: 1, createdAt: 1 }});

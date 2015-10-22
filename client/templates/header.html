@@ -5,8 +5,7 @@
       <a href="{{pathFor 'profile'}}" class="pull-right {{isActiveRoute 'profile'}}"><i class="fa fa-2x fa-user"></i></a>
     </header>
   </div>
-  <div class="btn-group btn-group-lg" role="group">
-    <a href="{{pathFor 'archive'}}" class="btn btn-secondary {{isActiveRoute regex='archiveSingle|archive'}}">Past Warmups</a>
-    <a href="{{pathFor 'home'}}" class="btn btn-secondary {{isActiveRoute 'home'}}">Today's Warmup</a>
+  <div style="margin-bottom: 30px;">
+    <a href="{{pathFor 'archive'}}" class="btn btn-primary {{isActiveRoute regex='archiveSingle|archive'}}" style="display: inline-block; width: 50%; border: 0; border-radius: 0; padding: 15px 0;">Past Warmups</a><a href="{{pathFor 'home'}}" class="btn btn-primary {{isActiveRoute 'home'}}" style="display: inline-block; width: 50%; border: 0; border-radius: 0; padding: 15px 0;">Today's Warmup</a>
   </div>
 </template>

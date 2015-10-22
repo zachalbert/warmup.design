@@ -1,11 +1,15 @@
 Template.promptFull.onCreated(function() {
   var self = this;
+  var param = FlowRouter.getParam('promptPubDate');
+
   self.autorun(function() {
     // If there isn't a date in the route, grab data with today's date
-    if(FlowRouter.getParam('promptPubDate'))
-      var promptDate = FlowRouter.getParam('promptPubDate');
-    else
+    if(param) {
+      var promptDate = param;
+    } else {
       var promptDate = moment().format('YYYY-MM-DD');
+    }
+    
     self.subscribe('promptByDate', promptDate);
   });
 });

@@ -1,8 +1,8 @@
 <template name="warmupSingle">
   {{#if Template.subscriptionsReady}}
-    {{#with getWarmup}}
+    {{#each getWarmups}}
       {{> warmupCard}}
-    {{/with}}
+    {{/each}}
   {{else}}
     Loading single warmup!
   {{/if}}
