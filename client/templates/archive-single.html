@@ -1,12 +1,14 @@
-<template name="singleWarmup">
-  {{#if isSubReady 'warmup'}}
-    {{#with getWarmup}}
+<template name="archiveSingle">
+  {{#if Template.subscriptionsReady}}
+    {{> promptFull}}
+
+    {{#each getWarmups}}
       <div class="col-md-4">
         <div class="card">
-          <img src="{{imageURL}}" alt="" class="card-img-top img-responsive">
+          <a href="{{pathFor 'warmup' postId=_id}}"><img src="{{imageURL}}" alt="" class="card-img-top img-responsive"></a>
           <div class="card-block">
-            <a href="{{submitterURL}}"><i class="fa fa-user"></i> {{submitter}}</a> // 
-            
+            <a href="{{designerURL}}"><i class="fa fa-user"></i> {{designer.fullname}}</a> // 
+            {{#if likeWinner}}Winnerwinnerchickendinner{{/if}}
             <div class="pull-right">
               <a href="#" class="share-warmup"><i class="fa fa-share"></i> ({{shareCount}})</a>
               <a href="#" class="like-warmup"><i class="fa fa-heart-o"></i> ({{likeCount}})</a>
@@ -15,8 +17,8 @@
           </div>
         </div>
       </div>
-    {{/with}}
+    {{/each}}
   {{else}}
-    Loading single warmup!
+    Loading spinner!
   {{/if}}
 </template>

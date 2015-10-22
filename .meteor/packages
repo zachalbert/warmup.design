@@ -23,3 +23,5 @@ kadira:flow-router
 arillo:flow-router-helpers
 meteorhacks:flow-layout
 msavin:mongol
+zimme:active-route
+anti:fake

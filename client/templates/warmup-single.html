@@ -1,15 +1,12 @@
-<template name="warmupsList">
-  {{> promptToday}}
-
-  {{#if isSubReady 'warmups'}}
-    {{#each getWarmups}}
+<template name="warmupSingle">
+  {{#if isSubReady 'warmup-single'}}
+    {{#with getWarmup}}
       <div class="col-md-4">
         <div class="card">
           <img src="{{imageURL}}" alt="" class="card-img-top img-responsive">
           <div class="card-block">
             <a href="{{submitterURL}}"><i class="fa fa-user"></i> {{submitter}}</a> // 
-            <a href="{{pathFor 'warmup' postId=_id}}">Link to Single Warmup</a>
-            {{formatDate createdAt}}{{this._id}}
+            
             <div class="pull-right">
               <a href="#" class="share-warmup"><i class="fa fa-share"></i> ({{shareCount}})</a>
               <a href="#" class="like-warmup"><i class="fa fa-heart-o"></i> ({{likeCount}})</a>
@@ -18,8 +15,8 @@
           </div>
         </div>
       </div>
-    {{/each}}
+    {{/with}}
   {{else}}
-    Loading spinner!
+    Loading single warmup!
   {{/if}}
 </template>

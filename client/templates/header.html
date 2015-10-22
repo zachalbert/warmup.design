@@ -2,11 +2,11 @@
   <div class="navbar navbar-fixed-top navbar-dark bg-inverse">
     <header>
       <a href="{{pathFor 'home'}}" class="pull-left">Warmup.Design</a>
-      <a href="#" class="pull-right"><i class="fa fa-2x fa-user"></i></a>
+      <a href="{{pathFor 'profile'}}" class="pull-right {{isActiveRoute 'profile'}}"><i class="fa fa-2x fa-user"></i></a>
     </header>
   </div>
   <div class="btn-group btn-group-lg" role="group">
-    <a href="#" class="btn btn-secondary">Past Warmups</a>
-    <a href="#" class="btn btn-secondary active">Today's Warmup</a>
+    <a href="{{pathFor 'archive'}}" class="btn btn-secondary {{isActiveRoute 'archive'}}">Past Warmups</a>
+    <a href="{{pathFor 'home'}}" class="btn btn-secondary {{isActiveRoute 'home'}}">Today's Warmup</a>
   </div>
 </template>
