@@ -8,10 +8,10 @@ Meteor.publish('warmupsByDate', function(dayOfWarmup) {
 //   return Warmups.find({}, {limit: 1, fields: { imageURL: 1, createdAt: 1 }});
 // });
 
-// // Return a single warmup, for a warmup detail view
-// Meteor.publish('warmupSingle', function(postId) {
-//   return Warmups.find({ _id: postId });
-// });
+// Return a single warmup, for a warmup detail view
+Meteor.publish('warmupSingle', function(postId) {
+  return Warmups.find({ _id: postId });
+});
 
 // Return all prompt data for a given day
 Meteor.publish('promptByDate', function(dayOfPrompt) {

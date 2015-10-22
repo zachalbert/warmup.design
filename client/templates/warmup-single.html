@@ -1,20 +1,7 @@
 <template name="warmupSingle">
-  {{#if isSubReady 'warmup-single'}}
+  {{#if Template.subscriptionsReady}}
     {{#with getWarmup}}
-      <div class="col-md-4">
-        <div class="card">
-          <img src="{{imageURL}}" alt="" class="card-img-top img-responsive">
-          <div class="card-block">
-            <a href="{{submitterURL}}"><i class="fa fa-user"></i> {{submitter}}</a> // 
-            
-            <div class="pull-right">
-              <a href="#" class="share-warmup"><i class="fa fa-share"></i> ({{shareCount}})</a>
-              <a href="#" class="like-warmup"><i class="fa fa-heart-o"></i> ({{likeCount}})</a>
-              <a href="#" class="kill-warmup">&times;</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      {{> warmupCard}}
     {{/with}}
   {{else}}
     Loading single warmup!

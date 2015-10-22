@@ -1,0 +1,16 @@
+<template name="warmupCard">
+  <div class="col-md-4">
+    <div class="card">
+      <a href="{{pathFor 'warmup' postId=_id}}"><img src="{{imageURL}}" alt="" class="card-img-top img-responsive"></a>
+      <div class="card-block">
+        <a href="{{designerURL}}"><i class="fa fa-user"></i> {{designer.fullname}}</a> // 
+        {{#if likeWinner}}Winnerwinnerchickendinner{{/if}}
+        <div class="pull-right">
+          <a href="#" class="share-warmup"><i class="fa fa-share"></i> ({{shareCount}})</a>
+          <a href="#" class="like-warmup"><i class="fa fa-heart-o"></i> ({{likeCount}})</a>
+          <a href="#" class="kill-warmup">&times;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

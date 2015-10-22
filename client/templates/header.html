@@ -6,7 +6,7 @@
     </header>
   </div>
   <div class="btn-group btn-group-lg" role="group">
-    <a href="{{pathFor 'archive'}}" class="btn btn-secondary {{isActiveRoute 'archive'}}">Past Warmups</a>
+    <a href="{{pathFor 'archive'}}" class="btn btn-secondary {{isActiveRoute regex='archiveSingle|archive'}}">Past Warmups</a>
     <a href="{{pathFor 'home'}}" class="btn btn-secondary {{isActiveRoute 'home'}}">Today's Warmup</a>
   </div>
 </template>

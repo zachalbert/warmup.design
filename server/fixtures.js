@@ -1,7 +1,7 @@
 /* Adds dummy data to db */
 
-var numPrompts = 15;
-var numWarmups = 3;
+var numPrompts = 36;
+var numWarmups = 7;
 
 function randomImageSize() {
   var randSize = Math.round((Math.random()*520+480))
