@@ -5,55 +5,29 @@
 
 ////// Color Palette //////
 
-$color-1:  #E7E0B7;
-$color-2:  #c4b16f;
-$color-3:  #bca46a;
-$color-4:  #b49666;
-$color-5:  #ac8962;
-$color-6:  #a57b5d;
-$color-7:  #9d6e59;
-$color-8:  #956055;
-$color-9:  #8d5350;
-$color-10: #85454c;
-$color-11: #723948;
-$color-12: #5e3043;
+$color-1:  #F01235;
+$color-2:  #17141C;
+$color-3:  #F7F5FA;
 
 .color-1 { color: $color-1; }
 .color-2 { color: $color-2; }
 .color-3 { color: $color-3; }
-.color-4 { color: $color-4; }
-.color-5 { color: $color-5; }
-.color-6 { color: $color-6; }
-.color-7 { color: $color-7; }
-.color-8 { color: $color-8; }
-.color-9 { color: $color-9; }
-.color-10{ color: $color-10; }
-.color-11{ color: $color-11; }
-.color-12{ color: $color-12; }
 
-$color-background:        #fff;
-$color-background-light:  #fbfafb;
-$color-text:              #4D2636;
+$color-background:        #17141C;
+$color-background-light:  #F7F5FA;
+$color-text:              #F7F5FA;
 $color-text-light:        #CCBEC4;
-$color-link:              #8BB7BE;
-$color-link-hover:        #5D929B;
+$color-link:              #F01235;
+$color-link-hover:        darken($color-link, .05);
 
 $color-border:            $color-link;
-
-$color-footer:            $color-12;
-$color-footer-text:       #DBD8C5;
-$color-footer-link:       $color-link;
-$color-footer-link-hover: $color-link-hover;
-
-$color-selection:         #fff;
-$color-selection-bg:      $color-text;
 
 
 
 ////// Grid //////
 
-$half-gutter-width:   20px;
-$gutter-compensation: -20px;
+$half-gutter-width:   16px;
+$gutter-compensation: -16px;
 $outer-margin:        40px;
 
 $grids:               12;
@@ -66,17 +40,20 @@ $left-inset: $column-width * (100 / $grids);
 
 ////// Type Scale //////
 
-$scale: 1.618; // golden ratio
-$font-size: 17px;
+$scale: 1.5; // golden ratio
+$font-size: 16px;
 $base: strip-unit($font-size);
 $line-height: round($font-size * $scale);
 
 // 0.618em, 1em, 1.618em, 2.618em, 4.236em
-$font-size-05:  $font-size/$scale;
+$font-size-05:  $font-size*.875;
 $font-size-1:   $font-size;
-$font-size-2:   1.618em;
-$font-size-3:   2.618em;
-$font-size-4:   4.236em;
+$font-size-2:   1.25em;
+$font-size-3:	1.5em;
+$font-size-4:	2em;
+$font-size-5:	3em;
+$font-size-6:   3.5em;
+$font-size-7:   4em;
 
 // Strips of lead
 $lead-half:        $line-height / 2;

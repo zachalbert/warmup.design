@@ -1,11 +1,15 @@
 <template name="header">
-  <div class="navbar navbar-fixed-top navbar-dark bg-inverse">
-    <header>
-      <a href="{{pathFor 'home'}}" class="pull-left">Warmup.Design</a>
-      <a href="{{pathFor 'profile'}}" class="pull-right {{isActiveRoute 'profile'}}"><i class="fa fa-2x fa-user"></i></a>
-    </header>
+  <div class="navbar navbar-fixed-top wd-navbar">
+  	<div class="container">
+     <header>
+       <a href="{{pathFor 'home'}}" class="pull-left">Warmup.Design</a>
+       <a href="{{pathFor 'profile'}}" class="pull-right {{isActiveRoute 'profile'}}"><i class="fa fa-2x fa-user"></i></a>
+     </header>
+   </div>
   </div>
-  <div style="margin-bottom: 30px;">
-    <a href="{{pathFor 'archive'}}" class="btn btn-primary {{isActiveRoute regex='archiveSingle|archive'}}" style="display: inline-block; width: 50%; border: 0; border-radius: 0; padding: 15px 0;">Past Warmups</a><a href="{{pathFor 'home'}}" class="btn btn-primary {{isActiveRoute 'home'}}" style="display: inline-block; width: 50%; border: 0; border-radius: 0; padding: 15px 0;">Today's Warmup</a>
+  <div class="wd-tabs">
+    <div class="container">
+      <a href="{{pathFor 'archive'}}" class="wd-tabs__item {{isActiveRoute regex='archiveSingle|archive'}}">Past Warmups</a><a href="{{pathFor 'home'}}" class="wd-tabs__item {{isActiveRoute 'home'}}">Today's Warmup</a>
+    </div>
   </div>
 </template>

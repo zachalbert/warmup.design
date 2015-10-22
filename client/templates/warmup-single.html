@@ -1,8 +1,12 @@
 <template name="warmupSingle">
   {{#if Template.subscriptionsReady}}
-    {{#each getWarmups}}
-      {{> warmupCard}}
-    {{/each}}
+  	<div class="warmup-container">
+	  	<div class="row">
+		    {{#each getWarmups}}
+		      {{> warmupCard}}
+		    {{/each}}
+		</div>
+	</div>
   {{else}}
     Loading single warmup!
   {{/if}}
