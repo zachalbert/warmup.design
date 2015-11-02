@@ -19,3 +19,11 @@ Template.registerHelper( 'currentRoute', ( route ) => {
   FlowRouter.watchPathChange();
   return FlowRouter.current().route.name === route ? 'active' : '';
 });
+
+Template.registerHelper( 'authInProgress', () => {
+  return Meteor.loggingIn();
+});
+
+Template.registerHelper( 'canShow', () => {
+  return !!Meteor.user();
+});

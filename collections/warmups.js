@@ -12,7 +12,7 @@ Warmups.deny({
   remove: () => true
 });
 
-let WarmupSchema = new SimpleSchema({
+Schema.Warmups = new SimpleSchema({
   "warmupPubDate": {
     type: String,
     label: "Date the warmup was added."
@@ -48,4 +48,4 @@ let WarmupSchema = new SimpleSchema({
   }
 });
 
-Warmups.attachSchema( WarmupSchema );
+Warmups.attachSchema( Schema.Warmups );

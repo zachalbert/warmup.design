@@ -12,7 +12,7 @@ Prompts.deny({
   remove: () => true
 });
 
-let PromptSchema = new SimpleSchema({
+Schema.Prompts = new SimpleSchema({
   "promptPubDate": {
     type: String,
     label: "Date the prompt will be published."
@@ -40,4 +40,4 @@ let PromptSchema = new SimpleSchema({
   }
 });
 
-Prompts.attachSchema( PromptSchema );
+Prompts.attachSchema( Schema.Prompts );
