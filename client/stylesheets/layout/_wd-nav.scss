@@ -1,0 +1,20 @@
+//nav
+#wd-navbar{
+  background: $color-background;
+  padding: 5px 0;
+}
+
+#nav-logo {
+  height: 32px;
+}
+
+.day-nav-prev,
+.day-nav-next {
+  font-size: 1.5em;
+}
+
+.navbar-toggle {
+  .icon-bar {
+    background: $color-6;
+  }
+}

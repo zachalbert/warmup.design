@@ -1,0 +1,29 @@
+/*** ITCSS suggests a general to specific architecture:
+**** 1. Settings (global variables, configs)
+**** 2. Tools (mixins, functions)
+**** 3. Generic (normalize, resets, bootstrap)
+**** 4. Base (html element selectors, unclassed)
+**** 5. Objects (layout and function, no visual design)
+**** 6. Components (completed morsels of UI)
+**** 7. Trumps (helpers, overrides, and donalds)
+****
+**** https://speakerdeck.com/dafed/managing-css-projects-with-itcss
+****/
+
+/* Bootstrap */
+@import "bootstrap/bootstrap-flex";
+
+/* Utilities */
+@import "utilities/index";
+
+/* Base */
+@import "base/index";
+
+/* Theme */
+@import "theme/index";
+
+/* Modules */
+@import "module/index";
+
+/* Layout */
+@import "layout/index";

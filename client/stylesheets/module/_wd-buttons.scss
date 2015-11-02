@@ -1,0 +1,30 @@
+//buttons
+.wd-btn-secondary {
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 2;
+  font-size: 12px;
+  &.btn-lg {
+    font-size: 16px;
+    padding: 15px 31px;
+  }
+  @include button-variant($color-text-dark, transparentize($color-text-dark, .96), transparent);
+  text-transform: uppercase;
+}
+.wd-btn-primary {
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 2;
+  font-size: 12px;
+  &.btn-lg {
+    font-size: 16px;
+    padding: 15px 31px;
+  }
+  @include button-variant($color-text, $color-link, $color-link);
+  text-transform: uppercase;
+}
+
+.submit-warmup-btn {
+  box-shadow: 0 1px 3px $color-2;
+  margin-top: 80px;
+}

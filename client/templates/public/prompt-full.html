@@ -1,0 +1,29 @@
+<template name="promptFull">
+  {{> submitModal}}
+	<div class="prompt-container">
+	  {{#each getPrompt}}
+	    <div class="day-nav row">
+        <div class="col-xs-2">
+          <a href="{{pathFor '/archive/:promptPubDate' promptPubDate=previousDate}}" class="day-nav-prev block text-left"><i class="icon icon-chevron-left"></i></a>
+        </div>
+        <div class="col-xs-8">
+          <h2 class="prompt-date">{{formatDate promptPubDate}}</h2>
+        </div>
+        <div class="col-xs-2">
+          {{#if futureDate}}
+          <a href="{{pathFor '/archive/:promptPubDate' promptPubDate=futureDate}}" class="day-nav-next block text-right"><i class="icon icon-chevron-right"></i></a>
+          {{else}}
+          <span class="day-nav-next block text-right disabled-link"><i class="icon icon-chevron-right"></i></span>
+          {{/if}}
+        </div>
+	    </div>
+	    <h1 class="prompt-text">{{promptText}}</h1>
+      <div class="prompt-author-container">
+	    	<div class="prompt-by-line">Prompt submitted by</div>
+	    	<i class="icon icon-person"></i>
+	    	<a class="prompt-author" href="{{promptAuthorURL}}">{{promptAuthor}}</a>
+	    </div>
+	    <button class="btn wd-btn-primary btn-lg submit-warmup-btn" data-toggle="modal" data-target="#submitModal">Submit your warmup <i class="icon icon-camera"></i></button>
+	  {{/each}}
+	 </div>
+</template>

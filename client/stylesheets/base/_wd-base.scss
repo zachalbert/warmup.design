@@ -1,0 +1,28 @@
+body {
+  padding-top: 53px;
+}
+
+* {
+  outline: none!important;
+}
+
+body {
+  background-color: $color-background;
+}
+
+a, a > .icon {
+  color: $color-link;
+  text-decoration: none;
+  transition: all 0.12s ease-out;
+  
+  &:hover, &:focus,
+  &:hover > .icon, &:focus > .icon {
+    color: $color-link-hover;
+    text-decoration: none;
+    transition: all 0.18s ease-in;
+  }
+}
+
+.animated {
+  transition: all 0.5s ease-in-out;
+}

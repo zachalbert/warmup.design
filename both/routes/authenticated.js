@@ -9,16 +9,16 @@ const authenticatedRoutes = FlowRouter.group({
   triggersEnter: [ authenticatedRedirect ]
 });
 
-authenticatedRoutes.route( '/', {
-  name: 'index',
+authenticatedRoutes.route( '/profile', {
+  name: 'profile',
   action() {
-    BlazeLayout.render( 'default', { yield: 'index' } );
+    BlazeLayout.render( 'default', { yield: 'profile' } );
   }
 });
 
-authenticatedRoutes.route( '/dashboard', {
-  name: 'dashboard',
+authenticatedRoutes.route( '/contribute', {
+  name: 'contribute',
   action() {
-    BlazeLayout.render( 'default', { yield: 'dashboard' } );
+    BlazeLayout.render( 'default', { yield: 'contribute' } );
   }
 });

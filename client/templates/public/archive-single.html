@@ -1,0 +1,17 @@
+<template name="archiveSingle">
+  {{#if Template.subscriptionsReady}}
+    <div class="prompt-winner-bg" style="background-image: url({{winnerBG}})"></div>
+    <div class="container">
+      {{> promptFull}}
+      <div class="warmup-container archive-single-view">
+  		  <div class="row">
+  		    {{#each getWarmups}}
+  		      {{> warmupCard}}
+  		    {{/each}}
+  	    </div>
+  	  </div>
+    </div>
+  {{else}}
+    {{> loading}}
+  {{/if}}
+</template>

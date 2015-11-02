@@ -34,3 +34,6 @@ reactive-var
 reactive-dict
 aldeed:collection2
 tracker
+arillo:flow-router-helpers
+momentjs:moment
+msavin:mongol

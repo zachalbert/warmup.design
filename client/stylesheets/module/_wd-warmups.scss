@@ -1,0 +1,35 @@
+//warmups
+.warmup-container {
+  margin-top: 32px;
+  position: relative;
+  z-index: 2;
+  @media #{$min-768} {
+    margin-top: 88px;
+  }
+}
+
+.warmup-author, a.warmup-author {
+  @include truncate;
+  color: $color-text-dark;
+  font-family: $headline-stack;
+  line-height: 32px;
+  .icon {
+    color: $color-link;
+  }
+}
+
+.winner-indicator {
+  color: $color-link;
+  -webkit-transform: rotate(-12deg);
+  position:absolute;
+  top:4px;
+  left: 12px;
+}
+
+.warmup-prompt {
+  @include truncate;
+  font-family: $headline-stack;
+  line-height: 32px;
+  color: $color-5;
+  margin: 0;
+}

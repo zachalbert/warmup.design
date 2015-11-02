@@ -1,0 +1,17 @@
+<template name="warmupCard">
+  <div class="col-md-4">
+    <div class="card">
+      <a href="{{pathFor '/:warmupPubDate/:postId' warmupPubDate=warmupPubDate postId=_id}}" class="warmup-card__link" style="position: relative;">
+        {{{trianglify imageURL}}}
+        <img src="{{imageURL}}" alt="" class="card-img-top img-responsive">
+      </a>
+      <div class="card-block wd-card-block clearfix">
+        <div class="pull-right">
+          <a href="#" class="like-warmup card-stat"><i class="icon icon-heart card-stat__icon"><span class="card-stat__count">{{formatNumber likeCount 1}}</span></i></a>
+          <a href="#" class="share-warmup card-stat"><i class="icon icon-share-alt card-stat__icon"></i></a>
+        </div>
+        <div class="warmup-author"><a href="{{designerURL}}"><i class="icon icon-person"></i> {{designer}}<i class="icon icon-crown winner-indicator"></i></a></div>
+      </div>
+    </div>
+  </div>
+</template>

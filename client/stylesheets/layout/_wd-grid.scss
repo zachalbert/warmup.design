@@ -1,0 +1,19 @@
+//bootstrap grid overrides
+
+.row {
+  margin-left: -8px;
+  margin-right: -8px;
+  @media #{$min-768} {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+}
+
+[class^="col-"] {
+  padding-left: 8px;
+  padding-right: 8px;
+  @media #{$min-768} {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}

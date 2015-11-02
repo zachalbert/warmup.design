@@ -1,0 +1,33 @@
+//tabs
+.wd-tabs {
+  background: $color-background;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+
+.wd-tabs__item {
+  border-bottom: 4px solid;
+  border-bottom-color: transparent;
+  color: $color-text;
+  display: inline-block;
+  font-size: $font-size-05;
+  letter-spacing: 1px;
+  padding: 16px 24px 4px 24px;
+  transition: border-bottom-color .3s;
+
+  &:hover {
+    color: $color-link;
+  }
+  
+  &.active {
+    border-bottom-color: $color-link;
+    color: $color-text;
+
+    &:hover {
+      color: $color-text;
+    }
+  }
+}

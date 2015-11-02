@@ -1,0 +1,107 @@
+////// Typography //////
+
+/* From the import tab of google.com/fonts, copy paste the @import statement */
+//@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic|Open+Sans:700,300,300italic,700italic);
+
+$headline-stack: "freight-text-pro", Georgia, Helvetica, serif;
+$body-stack:     "freight-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$weight-normal:  300;
+$weight-semibold:    600;
+$weight-bold:    700;
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $headline-stack;
+  font-style: italic;
+  font-weight: $weight-semibold;
+  line-height: $line-height;
+  margin: 0;
+}
+
+body {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-family: $body-stack;
+  font-weight: $weight-normal;
+  font-style: normal;
+}
+
+em     { font-style: italic; }
+strong { font-weight: $weight-bold; }
+
+h1,
+.h1 {
+  font-size: $font-size-3; 
+  margin-bottom: $lead-single;
+  line-height: $line-height * 2;
+  position: relative;
+  top: 4px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+h2 { font-size: $font-size-1; }
+h3 { font-size: $font-size-1; }
+
+ul,
+ol {
+  li {
+    margin-left: $lead-single;
+  }
+}
+
+h2,
+h3,
+p,
+blockquote,
+ul,
+ol {
+  margin: 0 0 $line-height;
+}
+
+small,
+.small-text {
+  text-transform: uppercase;
+  font-size: $font-size-05;
+  letter-spacing: 2px;
+}
+
+.meta-text {
+  @extend .small-text;
+  text-align: right;
+  color: $color-link;
+  line-height: $line-height;
+}
+
+.sub {
+  @extend .meta-text;
+  font-weight: normal;
+  font-style: normal;
+  position: relative;
+}
+
+blockquote {
+  @extend .small-text;
+  font-size: $font-size-1;
+  line-height: $line-height * 1.5;
+  font-style: italic;
+  text-align: justify;
+}
+
+cite {
+  @extend .small-text;
+  clear: left;
+  text-align: right;
+  display: block;
+}
+
+code {
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  margin: 0 0.35em;
+  background: darken($color-background-light, 2%);
+}
