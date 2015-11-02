@@ -1,5 +1,7 @@
 const authenticatedRedirect = () => {
   if ( !Meteor.loggingIn() && !Meteor.userId() ) {
+    let route = FlowRouter.current();
+
     FlowRouter.go( 'login' );
   }
 };
