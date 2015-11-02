@@ -4,7 +4,7 @@
   "description": "Daily Design Warmups.",
   "scripts": {
     "start": "meteor --settings settings-development.json",
-    "staging": "meteor deploy staging.meteor.com --settings settings-development.json",
-    "production": "meteor deploy production.meteor.com --settings settings-production.json"
+    "staging": "meteor deploy warmupdesign-staging.meteor.com --settings settings-development.json",
+    "production": "meteor deploy warmupdesign.meteor.com --settings settings-production.json"
   }
 }
