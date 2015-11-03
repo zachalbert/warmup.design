@@ -1,7 +1,7 @@
 Template.promptFull.helpers({
   getPrompt: function() {
     var promptDate = FlowRouter.getParam('promptPubDate');
-    var prompt = Prompts.find({});
+    var prompt = Prompts.findOne({});
     return prompt;
   },
   previousDate: function() {
@@ -26,6 +26,7 @@ Template.promptFull.helpers({
 
 Template.submitModal.events({
   "click .submit-warmup-btn": function (){
-    $('#submitModal').modal('show');
+    // $('#submitModal').modal('show');
+    FlowRouter.setQueryParams({ 'action': 'submit-warmup' });
   }
 });
