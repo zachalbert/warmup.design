@@ -32,8 +32,13 @@ Template.warmupCard.events({
     e.preventDefault();
     let self = this;
     
-    // If user is logged in, like.
-    Meteor.call( 'incrementLike', self );
+    if( !Meteor.user() ) {
+      FlowRouter.go('login');
+    } else {
+      // If likedByUser flag is true
+      Meteor.call( 'incrementLike', self );
+    }
+    
   },
   "click .share-warmup": function(e) {
     e.preventDefault();

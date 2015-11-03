@@ -42,6 +42,8 @@ Template.header.helpers({
 
 Template.header.events({
   'click .logout' () {
+    // Currently, if a user logs out, they get redirected to the login page.
+    // TODO: Should just redirect them back to the current route they're on.
     Meteor.logout( ( error ) => {
       if ( error ) {
         Bert.alert( error.reason, 'warning' );
