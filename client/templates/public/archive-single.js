@@ -1,6 +1,6 @@
-Template.archiveSingle.onCreated(function() {
+Template.archiveSingle.onCreated( function() {
   var self = this;
-  self.autorun(function() {
+  self.autorun( function() {
     let date = FlowRouter.getParam( 'promptPubDate' ),
         promptDate;
     

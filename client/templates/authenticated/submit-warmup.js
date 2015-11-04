@@ -1,25 +1,20 @@
 Template.submitWarmup.events({
-    "submit .submit-warmup": function(event) {
+  "submit .submit-warmup": function(event) {
       event.preventDefault();
 
+      // If user is logged in...
       // Get values from input
       var imageURL = event.target.imageURL.value;
-      var submitter = event.target.submitter.value;
-      var submitterURL = event.target.submitterURL.value;
-
+      var designer = event.target.designer.value;
+      var designerURL = event.target.designerURL.value;
+      var forPrompt = Prompts.findOne({}).promptPubDate;
+      
       // Insert said values into the collection
-      Warmups.insert({
-        imageURL: imageURL,
-        submitter: submitter,
-        submitterURL: submitterURL,
-        shareCount: 0,
-        likeCount: 0,
-        createdAt: new Date() // current time
-      });
+      Meteor.call('addWarmup', forPrompt, imageURL, designer, designerURL);
 
       // Finally, clear said form to make it ready for new junk
       event.target.imageURL.value = "";
-      event.target.submitter.value = "";
-      event.target.submitterURL.value = "";
+      event.target.designer.value = "";
+      event.target.designerURL.value = "";
     }
   });

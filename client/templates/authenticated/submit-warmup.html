@@ -1,18 +1,38 @@
 <template name="submitWarmup">
-  <form class="submit-warmup">
-  	<div class="row">
-  		<div class="col-md-3">
-		    <input class="form-control" type="text" name="imageURL" placeholder="Add your Image URL">
+	<div class="wd-modal modal fade" id="submitWarmupModal" tabindex="-1" role="dialog" aria-labelledby="submitModal" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true"><i class="icon icon-x"></i></span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Submit your warmup</h4>
+				</div>
+				<div class="modal-body">
+          <form class="submit-warmup">
+            <div class="row">
+              <div class="col-md-3">
+                <input class="form-control" type="text" name="imageURL" placeholder="Add your Image URL">
+                <!-- <input type="file" accept="image/*" capture="camera" /> -->
+              </div>
+              <div class="col-md-3">
+                <input class="form-control" type="text" name="designer" placeholder="Enter your name">
+              </div>
+              <div class="col-md-3">
+                <input class="form-control" type="text" name="designerURL" placeholder="Enter your URL">
+              </div>
+              <div class="col-md-3">
+                <input type="submit" value="Submit your warmup" class="submit-button btn btn-primary btn-block">
+              </div> 
+            </div>   
+          </form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn wd-btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn wd-btn-primary">Save changes</button>
+				</div>
+			</div>
 		</div>
-		<div class="col-md-3">
-		    <input class="form-control" type="text" name="submitter" placeholder="Enter your name">
-		</div>
-		<div class="col-md-3">
-		    <input class="form-control" type="text" name="submitterURL" placeholder="Enter your URL">
-		</div>
-		<div class="col-md-3">
-		    <input type="submit" value="Submit your warmup" class="submit-button btn btn-primary btn-block">
-		</div> 
-	</div>   
-  </form>
+	</div>
 </template>

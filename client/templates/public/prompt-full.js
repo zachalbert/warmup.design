@@ -23,10 +23,3 @@ Template.promptFull.helpers({
     }
   }
 });
-
-Template.submitModal.events({
-  "click .submit-warmup-btn": function (){
-    // $('#submitModal').modal('show');
-    FlowRouter.setQueryParams({ 'action': 'submit-warmup' });
-  }
-});

@@ -15,7 +15,8 @@ Accounts.onLogin( () => {
 if ( Meteor.isClient ) {
   Tracker.autorun( () => {
     if ( !Meteor.userId() && FlowRouter.current().route ) {
-      FlowRouter.go( 'login' );
+      // FlowRouter.go( 'login' );
+      FlowRouter.setQueryParams({ 'action': 'login' });
     }
   });
 }

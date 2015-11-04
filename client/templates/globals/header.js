@@ -41,7 +41,7 @@ Template.header.helpers({
 });
 
 Template.header.events({
-  'click .logout' () {
+  "click .logout": function () {
     // Currently, if a user logs out, they get redirected to the login page.
     // TODO: Should just redirect them back to the current route they're on.
     Meteor.logout( ( error ) => {
@@ -51,5 +51,11 @@ Template.header.events({
         Bert.alert( 'Logged out!', 'success' );
       }
     });
+  },
+  "click .login-trigger": function ( event, template ) {
+    FlowRouter.setQueryParams({ 'action': 'login' });
+  },
+  "click .signup-trigger": function ( event, template ) {
+    FlowRouter.setQueryParams({ 'action': 'signup' });
   }
 });
