@@ -4,6 +4,7 @@ A daily design warmup to help designers get better at design.
 
 # TODO
 
+* Whyyyy won't Trianglify work?
 * Turn the modals into a dynamic template, passing unique ids as arguments
 * Figure out how to get the cards to take up the right amount of space even before the image loads. Maybe sprinkle some loading spinners in there too?
 * Fix Twitter login

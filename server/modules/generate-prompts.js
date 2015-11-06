@@ -78,6 +78,7 @@ let _generateFakePrompts = ( pCount, wCount ) => {
         designerURL: faker.internet.url(),
         shareCount: _randomNumber(0, 42),
         likeCount: _randomNumber(0, 99),
+        likedBy: { 'user': 'asdf' },
         createdAt: new Date()
       });
     }

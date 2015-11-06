@@ -37,6 +37,10 @@ Schema.Warmups = new SimpleSchema({
     type: Number,
     label: "Number of times liked."
   },
+  "likedBy": {
+    type: Object,
+    label: "List of userIds who have liked this warmup"
+  },
   "createdAt": {
     type: Date,
     label: "Time the warmup was submitted.",

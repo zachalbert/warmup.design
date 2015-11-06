@@ -7,7 +7,8 @@ Meteor.methods({
 
     try {
       var documentId = Warmups.update( warmup._id, {
-        $inc: { 'likeCount': 1 }
+        $inc: { 'likeCount': 1 },
+        $set: { 'likedBy': Meteor.userId() }
       });
 
       // TODO Update the users collection with the the id of the warmup liked
