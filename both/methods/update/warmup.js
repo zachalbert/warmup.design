@@ -10,6 +10,8 @@ Meteor.methods({
         $inc: { 'likeCount': 1 }
       });
 
+      // TODO Update the users collection with the the id of the warmup liked
+
       return documentId;
 
     } catch( exception ) {

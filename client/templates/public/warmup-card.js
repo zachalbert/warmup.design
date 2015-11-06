@@ -33,7 +33,7 @@ Template.warmupCard.events({
     let self = this;
     
     if( !Meteor.user() ) {
-      FlowRouter.go('login');
+      FlowRouter.setQueryParams({ 'action': 'login' });
     } else {
       // If likedByUser flag is true
       Meteor.call( 'incrementLike', self );
