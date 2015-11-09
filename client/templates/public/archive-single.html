@@ -3,7 +3,11 @@
     <div class="prompt-winner-bg" style="background-image: url({{winnerBG}})"></div>
     <div class="container">
       {{> promptFull}}
-      {{> uploader}}
+      {{#if currentUser}}
+        {{> uploader}}
+      {{else}}
+        <button class="btn wd-btn-primary btn-lg login-trigger"><i class="icon icon-camera"></i>&nbsp;&nbsp;&nbsp;Submit your warmup</button>
+      {{/if}}
       <div class="files">
         {{#each files}}
           {{> file}}
