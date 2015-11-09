@@ -1,8 +1,4 @@
 {
-  "public": {
-    "key": "value"
-  },
-  "private": {
-    "MAIL_URL": ""
-  }
+  "AWSAccessKeyId": "AKIAJOAPQG3TTEDJFLZA",
+  "AWSSecretAccessKey": "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"
 }

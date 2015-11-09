@@ -17,7 +17,7 @@ let setBrowserPolicies = () => {
   BrowserPolicy.content.allowOriginForAll('*.mapbox.com');
 
   // Amazon S3
-  BrowserPolicy.content.allowOriginForAll('s3.amazonaws.com');
+  BrowserPolicy.content.allowOriginForAll('*.s3-us-west-1.amazonaws.com');
 
   // Image Placeholder Services
   BrowserPolicy.content.allowOriginForAll('*.loremflickr.com');

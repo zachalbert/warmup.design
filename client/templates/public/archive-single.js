@@ -10,7 +10,9 @@ Template.archiveSingle.onCreated( function() {
       promptDate = moment().format('YYYY-MM-DD');
     }
 
-    self.subscribe('archiveSingle', promptDate);
+    self.subscribe( 'archiveSingle', promptDate );
+
+    Template.instance().subscribe( 'files' );
   });
 });
 
@@ -25,16 +27,23 @@ Template.archiveSingle.helpers({
       promptDate = moment().format('YYYY-MM-DD');
     }
 
-    let warmups = Warmups.find({ 'warmupPubDate': promptDate }, { sort: { likeCount: -1 }});
+    let warmups = Warmups.find({ 'warmupPubDate': promptDate }, { sort: { 'likeCount': -1 }});
     if( warmups ) {
       return warmups;
     }
   },
   winnerBG: function() {
-    var winner = Warmups.findOne({}, { sort: { likeCount: -1 }});
+    var winner = Warmups.findOne({}, { sort: { 'likeCount': -1 }});
     var imageURL = winner.imageURL;
     if( imageURL ) {
       return imageURL;
+    }
+  },
+  files() {
+    var files = Files.find( {}, { sort: { 'added': -1 } } );
+
+    if( files ) {
+      return files;
     }
   }
 });

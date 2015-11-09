@@ -3,6 +3,14 @@
     <div class="prompt-winner-bg" style="background-image: url({{winnerBG}})"></div>
     <div class="container">
       {{> promptFull}}
+      {{> uploader}}
+      <div class="files">
+        {{#each files}}
+          {{> file}}
+        {{else}}
+          <p class="alert alert-warning">No files uploaded yet</p>
+        {{/each}}
+      </div>
       <div class="warmup-container archive-single-view">
   		  <div class="row">
   		    {{#each getWarmups}}
